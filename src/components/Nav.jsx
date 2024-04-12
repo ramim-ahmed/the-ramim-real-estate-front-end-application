@@ -35,7 +35,7 @@ export default function Nav() {
     );
   });
   return (
-    <div className=" bg-white border-b">
+    <div className=" bg-white border-b sticky top-0 z-10">
       <div className="navbar max-w-[1120px] mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
