@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo_header.png";
 export default function Nav() {
   const navRoutes = [
@@ -69,7 +69,10 @@ export default function Nav() {
         </div>
         <div className="navbar-end">
           <div className="flex items-center space-x-1">
-            <button className="inline-flex items-center border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+            <Link
+              to="login"
+              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base"
+            >
               Login
               <svg
                 fill="none"
@@ -82,9 +85,12 @@ export default function Nav() {
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </button>
+            </Link>
             <div className="border-r h-4"></div>
-            <button className="inline-flex items-center  border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+            <Link
+              to="/register"
+              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base "
+            >
               Register
               <svg
                 fill="none"
@@ -97,7 +103,7 @@ export default function Nav() {
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

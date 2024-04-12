@@ -1,8 +1,8 @@
 import logo from "../assets/logo.png";
 export default function Footer() {
   return (
-    <footer className="body-font bg-black text-white">
-      <div className=" max-w-[1120px] py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <footer className="body-font bg-primary text-white">
+      <div className="max-w-[1120px] py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <img src={logo} className="w-32" alt="" />
@@ -97,8 +97,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-black">
-        <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <div className="bg-primary max-w-[1120px] mx-auto">
+        <div className="mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-white text-sm text-center sm:text-left">
             © 2024 <strong>THE RAMIM - REAL ESTATE</strong> —
             <a
