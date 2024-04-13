@@ -1,8 +1,13 @@
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 export default function Property({ property }) {
-  const { image, title, location, price, area, bed, bath, status } =
+  const navigate = useNavigate();
+  const { id, image, title, location, price, area, bed, bath, status } =
     property || {};
+  const handleDetailsPage = () => {
+    navigate(`/property-details/${id}`);
+  };
   return (
     <div className="border rounded-md">
       <div className="relative">
@@ -32,7 +37,10 @@ export default function Property({ property }) {
             <p>sqft</p>
           </div>
         </div>
-        <button className="bg-primary hover:bg-opacity-80 duration-300 hover:duration-300 text-white p-3 w-full rounded-md">
+        <button
+          onClick={handleDetailsPage}
+          className="bg-primary hover:bg-opacity-80 duration-300 hover:duration-300 text-white p-3 w-full rounded-md"
+        >
           View Details
         </button>
       </div>

@@ -1,6 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo_header.png";
+import { TbLogout } from "react-icons/tb";
+
+import useAuth from "@/hooks/useAuth";
 export default function Nav() {
+  const { authUser, logout } = useAuth();
+  console.log(authUser);
   const navRoutes = [
     {
       path: "/",
@@ -18,6 +23,9 @@ export default function Nav() {
       </li>
     );
   });
+  const handleLogOutAuthUser = () => {
+    logout();
+  };
   return (
     <div className=" bg-white border-b sticky top-0 z-10">
       <div className="navbar max-w-[1120px] mx-auto">
@@ -52,43 +60,69 @@ export default function Nav() {
           <ul className="menu menu-horizontal px-1 space-x-5">{navItem}</ul>
         </div>
         <div className="navbar-end">
-          <div className="flex items-center space-x-1">
-            <Link
-              to="login"
-              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base"
-            >
-              Login
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
+          {authUser ? (
+            <div className="flex items-center space-x-2">
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button" className="m-1">
+                  <img
+                    title="profile"
+                    src={authUser?.photoURL}
+                    className="w-10 h-10 rounded-full object-cover"
+                    alt=""
+                  />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <a>{authUser?.displayName}</a>
+                  </li>
+                </ul>
+              </div>
+              <div onClick={handleLogOutAuthUser} className="cursor-pointer">
+                <TbLogout className="h-8 w-8" />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-1">
+              <Link
+                to="login"
+                className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base"
               >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </Link>
-            <div className="border-r h-4"></div>
-            <Link
-              to="/register"
-              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base "
-            >
-              Register
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
+                Login
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-1"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </Link>
+              <div className="border-r h-4"></div>
+              <Link
+                to="/register"
+                className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base "
               >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </Link>
-          </div>
+                Register
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-1"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
