@@ -12,7 +12,11 @@ export default function RootLayout() {
     }, 2000);
   });
   if (!domLoaded) {
-    return <Loader title="THE RAMIM - REAL ESTATE" />;
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Loader title="THE RAMIM - REAL ESTATE" />
+      </div>
+    );
   }
   return (
     <div>

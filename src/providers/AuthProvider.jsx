@@ -6,6 +6,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -53,11 +55,29 @@ export default function AuthProvider({ children }) {
       toast.error(error?.message);
     }
   };
+  const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    try {
+      await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      setAuthUser({
+        ...user,
+      });
+      setLoading(false);
+      toast.success("Account Succesfully Login With Google!");
+    } catch (error) {
+      setLoading(false);
+      setFirebaseError(error.message);
+      toast.error(error?.message);
+    }
+  };
   // logout
   const logout = () => {
     const auth = getAuth();
     return signOut(auth);
   };
+
   useEffect(() => {
     const auth = getAuth();
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -69,6 +89,7 @@ export default function AuthProvider({ children }) {
   const authValue = {
     signup,
     login,
+    signInWithGoogle,
     logout,
     authUser,
     loading,
