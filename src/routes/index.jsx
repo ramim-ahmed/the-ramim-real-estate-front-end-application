@@ -6,6 +6,8 @@ import Login from "@/pages/Login";
 import NotFound from "@/pages/NotFound";
 import PropertyDetails from "@/pages/PropertyDetails";
 import Register from "@/pages/Register";
+import UpdateProfile from "@/pages/UpdateProfile";
+import PrivateRoute from "@/privateRoute/PrivateRoute";
 import { createBrowserRouter } from "react-router-dom";
 const routes = createBrowserRouter([
   {
@@ -20,8 +22,20 @@ const routes = createBrowserRouter([
       },
       {
         path: "/property-details/:id",
-        element: <PropertyDetails />,
+        element: (
+          <PrivateRoute>
+            <PropertyDetails />
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => fetchPropertyDetailsById(params?.id),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",

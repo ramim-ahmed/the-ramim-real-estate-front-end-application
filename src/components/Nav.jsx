@@ -12,6 +12,10 @@ export default function Nav() {
       level: "Home",
     },
     {
+      path: "/update-profile",
+      level: "Update Profile",
+    },
+    {
       path: "/contact",
       level: "Contact",
     },
@@ -54,7 +58,9 @@ export default function Nav() {
               {navItem}
             </ul>
           </div>
-          <img src={logo} className="w-32" alt="the-ramim-real-estate" />
+          <Link to="/" className="cursor-pointer">
+            <img src={logo} className="w-32" alt="the-ramim-real-estate" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-5">{navItem}</ul>
@@ -67,7 +73,7 @@ export default function Nav() {
                   <img
                     title="profile"
                     src={authUser?.photoURL}
-                    className="w-10 h-10 rounded-full object-cover"
+                    className="w-10 h-10 border-2 border-blue-600 rounded-full object-cover"
                     alt=""
                   />
                 </div>

@@ -95,7 +95,21 @@ export default function AuthProvider({ children }) {
     const auth = getAuth();
     return signOut(auth);
   };
-
+  const updateUserProfile = async (username, photo_url) => {
+    const auth = getAuth();
+    setLoading(true);
+    try {
+      await updateProfile(auth.currentUser, {
+        displayName: username,
+        photoURL: photo_url,
+      });
+      setLoading(false);
+      toast.success("Profile Updated Successfully");
+    } catch (error) {
+      setLoading(false);
+      toast.error(error?.message);
+    }
+  };
   useEffect(() => {
     const auth = getAuth();
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -110,6 +124,7 @@ export default function AuthProvider({ children }) {
     signInWithGoogle,
     signInWithGithub,
     logout,
+    updateUserProfile,
     authUser,
     loading,
     firebaseError,

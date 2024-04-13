@@ -2,14 +2,17 @@ import { HiOutlineEye } from "react-icons/hi2";
 import { RiEyeOffLine } from "react-icons/ri";
 import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const { login, firebaseError } = useAuth();
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const handleLogin = () => {
-    login(email, password);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleLogin = async () => {
+    await login(email, password);
+    navigate(location.state ? location.state : "/");
   };
   return (
     <form
