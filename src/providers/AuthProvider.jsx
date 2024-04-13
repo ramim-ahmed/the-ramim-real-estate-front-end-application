@@ -8,6 +8,7 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  GithubAuthProvider,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -72,6 +73,23 @@ export default function AuthProvider({ children }) {
       toast.error(error?.message);
     }
   };
+  const signInWithGithub = async () => {
+    const provider = new GithubAuthProvider();
+    const auth = getAuth();
+    try {
+      await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      setAuthUser({
+        ...user,
+      });
+      setLoading(false);
+      toast.success("Account Succesfully Login With Github!");
+    } catch (error) {
+      setLoading(false);
+      setFirebaseError(error.message);
+      toast.error(error?.message);
+    }
+  };
   // logout
   const logout = () => {
     const auth = getAuth();
@@ -90,6 +108,7 @@ export default function AuthProvider({ children }) {
     signup,
     login,
     signInWithGoogle,
+    signInWithGithub,
     logout,
     authUser,
     loading,
