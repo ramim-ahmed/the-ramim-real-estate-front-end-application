@@ -39,9 +39,12 @@ export default function Property({ property }) {
         </div>
         <button
           onClick={handleDetailsPage}
-          className="bg-primary hover:bg-opacity-80 duration-300 hover:duration-300 text-white p-3 w-full rounded-md"
+          className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-primary rounded hover:bg-white group w-full"
         >
-          View Details
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-blue-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-center group-hover:text-left  transition-colors text-white duration-300 ease-in-out group-hover:text-white">
+            View Details
+          </span>
         </button>
       </div>
     </div>
