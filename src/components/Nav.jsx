@@ -11,18 +11,6 @@ export default function Nav() {
       level: "About",
     },
     {
-      path: "/property",
-      level: "Property",
-    },
-    {
-      path: "/services",
-      level: "Services",
-    },
-    {
-      path: "/agent",
-      level: "Agent",
-    },
-    {
       path: "/contact",
       level: "Contact",
     },
