@@ -7,10 +7,6 @@ export default function Nav() {
       level: "Home",
     },
     {
-      path: "/about",
-      level: "About",
-    },
-    {
       path: "/contact",
       level: "Contact",
     },
