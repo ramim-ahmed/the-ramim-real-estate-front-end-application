@@ -21,9 +21,22 @@ export default function OurService() {
         </p>
       </div>
       <div className="grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ServiceItem title="Sell A Property" icon={s1} />
-        <ServiceItem title="Buying A Property" icon={s2} buttonbg />
-        <ServiceItem title="Rent A Property" icon={s3} />
+        <ServiceItem
+          title="Sell A Property"
+          icon={s1}
+          description="Selling a property can be a stressful event at any time. When the property is rented, everyone should understand their rights and responsibilities."
+        />
+        <ServiceItem
+          title="Buying A Property"
+          icon={s2}
+          buttonbg
+          description="Buying a property can be a stressful event at any time. When the property is buy, everyone should understand their rights and responsibilities and target."
+        />
+        <ServiceItem
+          title="Rent A Property"
+          icon={s3}
+          description="Residential property is property zoned specifically for living or dwelling for individuals or households; it may include standalone single-family dwellings to large, multi-unit apartment buildings."
+        />
       </div>
     </div>
   );

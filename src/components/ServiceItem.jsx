@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-export default function ServiceItem({ title, icon, buttonbg }) {
+export default function ServiceItem({ title, icon, buttonbg, description }) {
   return (
     <div className="border rounded-md border-opacity-10 border-primary p-8 flex flex-col items-center justify-center">
       <div>
@@ -9,11 +9,7 @@ export default function ServiceItem({ title, icon, buttonbg }) {
         <h1 className=" font-medium text-xl text-primary text-center">
           {title}
         </h1>
-        <p className="text-center text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui adipisci
-          iure praesentium perferendis! Perspiciatis temporibus aliquid
-          dignissimos eveniet dicta quod.
-        </p>
+        <p className="text-center text-sm">{description}</p>
         <div className="flex justify-center">
           <button
             className={`border border-primary px-7 py-1 rounded-md font-medium text-center ${
@@ -32,4 +28,5 @@ ServiceItem.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   buttonbg: PropTypes.bool,
+  description: PropTypes.string.isRequired,
 };

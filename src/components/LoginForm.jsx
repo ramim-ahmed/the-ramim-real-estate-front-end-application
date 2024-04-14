@@ -1,11 +1,11 @@
 import { HiOutlineEye } from "react-icons/hi2";
 import { RiEyeOffLine } from "react-icons/ri";
 import useAuth from "@/hooks/useAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialAuth from "./SocialAuth";
 export default function LoginForm() {
-  const { login, firebaseError } = useAuth();
+  const { login, firebaseError, authUser } = useAuth();
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -13,8 +13,12 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const handleLogin = async () => {
     await login(email, password);
-    navigate(location.state ? location.state : "/");
   };
+  useEffect(() => {
+    if (authUser) {
+      navigate(location?.state ? location?.state : "/");
+    }
+  }, [authUser, navigate, location]);
   return (
     <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:mx-auto w-full mt-10 md:mt-0 relative shadow-md">
       <form onSubmit={handleLogin}>

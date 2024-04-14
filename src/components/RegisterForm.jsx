@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "@/hooks/useAuth";
 import { HiOutlineEye } from "react-icons/hi2";
 import { RiEyeOffLine } from "react-icons/ri";
@@ -9,10 +9,12 @@ import toast from "react-hot-toast";
 import SocialAuth from "./SocialAuth";
 
 export default function RegisterForm() {
-  const { signup, firebaseError } = useAuth();
+  const { signup, firebaseError, authUser } = useAuth();
   const [isAgree, setIsAgree] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -20,7 +22,7 @@ export default function RegisterForm() {
     formState: { errors },
   } = useForm();
 
-  const handleRegister = (data) => {
+  const handleRegister = async (data) => {
     const { username, email, password, confirmPassword, photo_url } = data;
     const validPassword = passwordValidator(password);
     if (!validPassword) {
@@ -32,10 +34,15 @@ export default function RegisterForm() {
       return toast.error("password and confirm password not match!");
     }
     if (isAgree) {
-      signup(email, password, username, photo_url);
+      await signup(email, password, username, photo_url);
       reset();
     }
   };
+  useEffect(() => {
+    if (authUser) {
+      navigate(location?.state ? location?.state : "/");
+    }
+  }, [authUser, navigate, location]);
   return (
     <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:mx-auto w-full relative shadow-md">
       <form onSubmit={handleSubmit(handleRegister)}>

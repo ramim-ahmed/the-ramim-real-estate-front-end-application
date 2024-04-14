@@ -5,7 +5,6 @@ import { TbLogout } from "react-icons/tb";
 import useAuth from "@/hooks/useAuth";
 export default function Nav() {
   const { authUser, logout } = useAuth();
-  console.log(authUser);
   const navRoutes = [
     {
       path: "/",
