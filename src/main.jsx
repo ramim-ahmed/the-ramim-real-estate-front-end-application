@@ -6,6 +6,9 @@ import routes from "./routes/index.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./providers/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>

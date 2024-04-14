@@ -4,7 +4,11 @@ import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
 export default function OurService() {
   return (
-    <div className="max-w-[1120px] mx-auto py-10 px-3">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="max-w-[1120px] mx-auto py-10 px-3"
+    >
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-medium text-primary">

@@ -2,7 +2,11 @@ import imageOne from "../assets/w1.jpg";
 import imageTwo from "../assets/w2.jpg";
 export default function WhyChoose() {
   return (
-    <div className="bg-primary bg-opacity-5 p-20 mt-20">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="bg-primary bg-opacity-5 p-20 mt-20"
+    >
       <div className="max-w-[1120px] mx-auto grid grid-cols-12">
         <div className="lg:col-span-6 col-span-12">
           <div className="lg:pr-4">

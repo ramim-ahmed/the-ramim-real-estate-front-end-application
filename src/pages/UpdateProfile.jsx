@@ -26,7 +26,11 @@ export default function UpdateProfile() {
       <Helmet>
         <title>Update Profile</title>
       </Helmet>
-      <div className="bg-[#F6F6FE] min-h-screen">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        className="bg-[#F6F6FE] min-h-screen"
+      >
         <div className="max-w-[1120px] mx-auto pt-16 px-3 pb-10 lg:pb-0">
           <div className="grid grid-cols-12 gap-8">
             <div className="lg:col-span-4 col-span-12 bg-white flex justify-center p-6 rounded-xl">

@@ -1,6 +1,10 @@
 export default function Statistic() {
   return (
-    <section className="text-gray-600 body-font px-3">
+    <section
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="text-gray-600 body-font px-3"
+    >
       <div className="max-w-[1120px] py-10 mx-auto">
         <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 text-center gap-6">
           <div className="w-full">

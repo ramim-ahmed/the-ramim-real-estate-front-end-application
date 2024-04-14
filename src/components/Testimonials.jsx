@@ -1,6 +1,10 @@
 export default function Testimonials() {
   return (
-    <div className="max-w-[1120px] mx-auto my-20 px-3">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="max-w-[1120px] mx-auto my-20 px-3"
+    >
       <div>
         <h1 className="text-xl font-medium title-font text-primary">
           Testimonials

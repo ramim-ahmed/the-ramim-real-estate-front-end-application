@@ -9,7 +9,11 @@ export default function Property({ property }) {
     navigate(`/property-details/${id}`);
   };
   return (
-    <div className="border rounded-md">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="border rounded-md"
+    >
       <div className="relative">
         <img className="w-full rounded-t" src={image} alt="" />
         <p className="absolute top-5 left-5 bg-primary text-white px-4 rounded-md py-1 bg-opacity-50">

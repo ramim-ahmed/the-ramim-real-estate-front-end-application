@@ -6,7 +6,11 @@ export default function Contact() {
       <Helmet>
         <title>Contact</title>
       </Helmet>
-      <div className="max-w-[1120px] mx-auto px-3">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        className="max-w-[1120px] mx-auto px-3"
+      >
         <div className="bg-primary rounded-md p-8 mt-10">
           <h1 className="text-center font-medium text-3xl text-white">
             Contact Us

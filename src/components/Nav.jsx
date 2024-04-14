@@ -67,11 +67,10 @@ export default function Nav() {
         </div>
         <div className="navbar-end">
           {authUser ? (
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 xl:mr-0 lg:mr-5 mr-8">
               <div className="dropdown dropdown-hover">
                 <div tabIndex={0} role="button" className="m-1">
                   <img
-                    title="profile"
                     src={authUser?.photoURL}
                     className="w-10 h-10 border-2 border-blue-600 rounded-full object-cover"
                     alt=""
@@ -79,10 +78,12 @@ export default function Nav() {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box lg:w-40 w-24"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box"
                 >
                   <li>
-                    <a className="font-semibold">{authUser?.displayName}</a>
+                    <a className="text-sm font-medium">
+                      {authUser?.displayName}
+                    </a>
                   </li>
                 </ul>
               </div>
