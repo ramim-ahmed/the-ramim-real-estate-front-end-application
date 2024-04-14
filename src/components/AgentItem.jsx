@@ -10,7 +10,7 @@ export default function AgentItem({ name, img }) {
         <p>Real Estate Broker</p>
         <p>AgentID: TR0125441001</p>
         <div className="mt-2">
-          <button className="bg-primary text-white px-4 rounded-3xl">
+          <button className="bg-primary text-white px-4 text-sm rounded-3xl">
             Connect
           </button>
         </div>

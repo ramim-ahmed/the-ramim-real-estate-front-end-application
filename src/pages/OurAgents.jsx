@@ -18,8 +18,8 @@ export default function OurAgents() {
         <div className="text-center bg-primary text-white p-6 rounded-md">
           <h2 className="text-xl font-medium mb-3">Agents Nearby</h2>
           <p>
-            Conenct with a qualified and skill real estate agent to <br />
-            Help you achive your property goals
+            Connect with a qualified and skill real estate agent to <br />
+            Help you achive your property goals.
           </p>
         </div>
         <div className="mt-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
