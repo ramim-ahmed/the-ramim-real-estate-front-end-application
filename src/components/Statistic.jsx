@@ -1,9 +1,9 @@
 export default function Statistic() {
   return (
     <section className="text-gray-600 body-font px-3">
-      <div className="max-w-[1120px] py-24 mx-auto">
-        <div className="flex flex-wrap -m-4 text-center">
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+      <div className="max-w-[1120px] py-10 mx-auto">
+        <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 text-center gap-6">
+          <div className="w-full">
             <div className="border-2 border-gray-100 px-4 py-6 rounded-lg">
               <h2 className="title-font font-bold text-4xl text-primary">
                 20+
@@ -11,7 +11,7 @@ export default function Statistic() {
               <p className="leading-relaxed">Year In The Industry.</p>
             </div>
           </div>
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div className="w-full">
             <div className="border-2 border-gray-100 px-4 py-6 rounded-lg">
               <h2 className="title-font font-bold text-4xl text-primary">
                 90%
@@ -19,7 +19,7 @@ export default function Statistic() {
               <p className="leading-relaxed">Customer Satisfaction</p>
             </div>
           </div>
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div className="w-full">
             <div className="border-2 border-gray-100 px-4 py-6 rounded-lg">
               <h2 className="title-font font-bold text-4xl text-primary">
                 10K
@@ -27,7 +27,7 @@ export default function Statistic() {
               <p className="leading-relaxed">Properties Sold</p>
             </div>
           </div>
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div className="w-full">
             <div className="border-2 border-gray-100 px-4 py-6 rounded-lg">
               <h2 className="title-font font-bold text-4xl text-primary">
                 50+

@@ -1,13 +1,18 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import useAuth from "@/hooks/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
 export default function SocialAuth() {
   const { signInWithGoogle, signInWithGithub } = useAuth();
-  const handleGoogleAuth = () => {
-    signInWithGoogle();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleGoogleAuth = async () => {
+    await signInWithGoogle();
+    navigate(location.state ? location.state : "/");
   };
-  const handleGithubAuth = () => {
-    signInWithGithub();
+  const handleGithubAuth = async () => {
+    await signInWithGithub();
+    navigate(location.state ? location.state : "/");
   };
   return (
     <div className="flex justify-center space-x-4">

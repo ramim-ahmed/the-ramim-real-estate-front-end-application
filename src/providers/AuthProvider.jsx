@@ -56,6 +56,7 @@ export default function AuthProvider({ children }) {
       toast.error(error?.message);
     }
   };
+  // google auth
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
@@ -73,6 +74,7 @@ export default function AuthProvider({ children }) {
       toast.error(error?.message);
     }
   };
+  // github auth
   const signInWithGithub = async () => {
     const provider = new GithubAuthProvider();
     const auth = getAuth();
@@ -95,6 +97,7 @@ export default function AuthProvider({ children }) {
     const auth = getAuth();
     return signOut(auth);
   };
+  //   update profile user
   const updateUserProfile = async (username, photo_url) => {
     const auth = getAuth();
     setLoading(true);
@@ -110,6 +113,7 @@ export default function AuthProvider({ children }) {
       toast.error(error?.message);
     }
   };
+  //   observer auth state changes
   useEffect(() => {
     const auth = getAuth();
     const unSubscribe = onAuthStateChanged(auth, (user) => {

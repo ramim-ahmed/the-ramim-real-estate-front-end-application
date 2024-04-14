@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Home</title>
+        <title>THE RAMIM-REAL ESTATE | Home</title>
       </Helmet>
       <Banner />
       <AboutUs />

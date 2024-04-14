@@ -79,10 +79,10 @@ export default function Nav() {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box lg:w-40 w-24"
                 >
                   <li>
-                    <a>{authUser?.displayName}</a>
+                    <a className="font-semibold">{authUser?.displayName}</a>
                   </li>
                 </ul>
               </div>

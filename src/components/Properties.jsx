@@ -9,7 +9,7 @@ export default function Properties({ data }) {
         </h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-10">
-          {data.map((property) => (
+          {data?.map((property) => (
             <Property key={property.id} property={property} />
           ))}
         </div>
