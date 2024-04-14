@@ -13,7 +13,7 @@ export default function WhyChoose() {
             <h1 className="text-xl font-medium text-primary">
               Why Choose Us ?
             </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Fastest-growing real estate businesses in Bangladesh</p>
             <div className=" mt-8 space-y-10">
               <div className="bg-gray-100 rounded flex h-full">
                 <svg
@@ -32,10 +32,7 @@ export default function WhyChoose() {
                   <h4 className="text-base font-medium">
                     Excellent Communication
                   </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ipsam, quidem?
-                  </p>
+                  <p>we are always concern about client communication.</p>
                 </div>
               </div>
               <div className="bg-gray-100 rounded flex h-full">
@@ -53,11 +50,10 @@ export default function WhyChoose() {
                 </svg>
                 <div>
                   <h4 className="text-base font-medium">
-                    Excellent Communication
+                    Extensive Market Knowledge
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ipsam, quidem?
+                    we are also that 12 years of market knowledge in industry.
                   </p>
                 </div>
               </div>
@@ -75,12 +71,10 @@ export default function WhyChoose() {
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
                 <div>
-                  <h4 className="text-base font-medium">
-                    Excellent Communication
-                  </h4>
+                  <h4 className="text-base font-medium">Strong Negotiators</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ipsam, quidem?
+                    Negotiation leaves everyone satisfied that they have gotten
+                    a deal they can live with.
                   </p>
                 </div>
               </div>
