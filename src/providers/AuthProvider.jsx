@@ -106,6 +106,10 @@ export default function AuthProvider({ children }) {
         displayName: username,
         photoURL: photo_url,
       });
+      const user = auth.currentUser;
+      setAuthUser({
+        ...user,
+      });
       setLoading(false);
       toast.success("Profile Updated Successfully");
     } catch (error) {
