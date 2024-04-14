@@ -4,6 +4,7 @@ import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import NotFound from "@/pages/NotFound";
+import OurAgents from "@/pages/OurAgents";
 import PropertyDetails from "@/pages/PropertyDetails";
 import Register from "@/pages/Register";
 import UpdateProfile from "@/pages/UpdateProfile";
@@ -19,6 +20,14 @@ const routes = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => fetchProperties(),
+      },
+      {
+        path: "/agents",
+        element: (
+          <PrivateRoute>
+            <OurAgents />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/property-details/:id",

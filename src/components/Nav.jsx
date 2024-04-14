@@ -12,6 +12,10 @@ export default function Nav() {
       level: "Home",
     },
     {
+      path: "/agents",
+      level: "Agents",
+    },
+    {
       path: "/update-profile",
       level: "Update Profile",
     },
