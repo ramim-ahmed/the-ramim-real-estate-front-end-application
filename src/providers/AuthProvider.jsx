@@ -18,6 +18,7 @@ export default function AuthProvider({ children }) {
   const [authUser, setAuthUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [firebaseError, setFirebaseError] = useState("");
+  const [firebaseLoginError, setFirebaseLoginError] = useState("");
   // signup
   const signup = async (email, password, username, photo_url = "") => {
     const auth = getAuth();
@@ -52,7 +53,7 @@ export default function AuthProvider({ children }) {
       toast.success("Login successfully!");
     } catch (error) {
       setLoading(false);
-      setFirebaseError(error.message);
+      setFirebaseLoginError(error.message);
       toast.error(error?.message);
     }
   };
@@ -136,6 +137,7 @@ export default function AuthProvider({ children }) {
     authUser,
     loading,
     firebaseError,
+    firebaseLoginError,
   };
   return (
     <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>

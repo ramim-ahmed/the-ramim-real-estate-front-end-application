@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialAuth from "./SocialAuth";
 export default function LoginForm() {
-  const { login, firebaseError, authUser } = useAuth();
+  const { login, firebaseLoginError, authUser } = useAuth();
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -25,9 +25,9 @@ export default function LoginForm() {
         <h2 className="text-gray-900 text-center text-lg mb-1 font-medium title-font">
           Login your account
         </h2>
-        {firebaseError && (
+        {firebaseLoginError && (
           <div>
-            <p className=" text-red-500 py-3">{firebaseError}</p>
+            <p className=" text-red-500 py-3">{firebaseLoginError}</p>
           </div>
         )}
         <div className="relative mb-4">
