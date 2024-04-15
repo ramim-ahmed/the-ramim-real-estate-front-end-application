@@ -46,7 +46,7 @@ export default function AuthProvider({ children }) {
   const login = async (email, password) => {
     const auth = getAuth();
     setLoading(true);
-    setFirebaseError("");
+    setFirebaseLoginError("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setLoading(false);
@@ -61,6 +61,8 @@ export default function AuthProvider({ children }) {
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
+    setFirebaseError("");
+    setFirebaseLoginError("");
     try {
       await signInWithPopup(auth, provider);
       const user = auth.currentUser;
@@ -79,6 +81,8 @@ export default function AuthProvider({ children }) {
   const signInWithGithub = async () => {
     const provider = new GithubAuthProvider();
     const auth = getAuth();
+    setFirebaseError("");
+    setFirebaseLoginError("");
     try {
       await signInWithPopup(auth, provider);
       const user = auth.currentUser;
