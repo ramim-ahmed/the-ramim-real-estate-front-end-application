@@ -30,6 +30,6 @@ Tech Uses 🔥:
 
 Challenges Requirements npm I Use ✨:
 
-- [swiper](https://swiperjs.com/) :that allows help pre build slider use to application.
+- [Swiper](https://swiperjs.com/) :that allows help pre build slider use to application.
 - [AOS](https://michalsnik.github.io/aos/): For quick animation on scrolling.
 - [React-Hook-Form](https://react-hook-form.com/): that allows to form handling with validation
