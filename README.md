@@ -9,7 +9,7 @@ Features ✨:
 <ul>
     <li>Implement client-side user authentication with firebase.</li>
     <li>Implement Private Route.</li>
-    <li>Implement user profile udpdate functionality.</li>
+    <li>Implement user profile update functionality.</li>
     <li>Responsive all devices.</li>
     <li>Properties data fetch from external api.</li>
     <li>Implement dynamically title showing each page.</li>
